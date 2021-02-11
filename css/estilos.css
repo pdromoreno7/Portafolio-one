@@ -276,13 +276,21 @@ figure {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .social {
-}
+  display: flex;
+  width: 290px;
+  height: 50px;
+  margin: 0 10px;
+  background-size: 50px 50px;
+  
+} 
+
 
 .social-link {
-  display: inline-block;
+  display: flex;
   width: 50px;
   height: 50px;
   margin: 0 10px;
@@ -290,16 +298,16 @@ figure {
 }
 
 .social-link.twitter {
-  background-image: url("../images/twitter.svg");
+  background-image: url("/images/twitter.svg");
 }
 .social-link.facebook {
-  background-image: url("../images/facebook.svg");
+  background-image: url('/images/facebook.svg');
 }
 .social-link.github {
-  background-image: url("../images/github.svg");
+  background-image: url('../images/github.svg');
 }
 .social-link.instagram {
-  background-image: url("../images/instagram.svg");
+  background-image: url('../images/instagram.svg');
 }
 
 .form-email input {
