@@ -339,10 +339,29 @@ figure {
 .container {
   /* border: 1px solid red; */
   max-width: 1000px;
+  flex: 1;
   margin: 0 auto;
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
   height: inherit;
   flex-wrap: inherit;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    display: block;
+    height: auto;
+  }
+  .header ol {
+    display: initial;
+  }
+  .header ol li {
+    height: 50px;
+  }
+  .header a {
+    justify-content: center;
+  }
+  .header .logo {
+    text-align: center;
+  }
 }
