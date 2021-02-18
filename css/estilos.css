@@ -196,6 +196,9 @@ figure {
   background-color: #ffd902;
   color: #000000;
 }
+/* .portfolio {
+  width: 100%;
+} */
 
 .flexbox {
   display: flex;
@@ -238,8 +241,8 @@ figure {
   margin-left: 20px;
 }
 .event {
-  margin: 10px;
-  width: 480px;
+  margin: 1%;
+  width: 48%;
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
@@ -249,6 +252,7 @@ figure {
   width: 480px;
   height: 200px;
   object-fit: cover;
+  object-position: 25% 25%;
 }
 .event-detail {
   margin: 20px 40px;
@@ -274,6 +278,9 @@ figure {
   padding: 5px 20px;
   text-decoration: none;
   border-radius: 5px;
+}
+.event-imageContainer iframe {
+  width: 480px;
 }
 
 .contact {
@@ -401,10 +408,35 @@ figure {
   .project-description {
     font-size: 0.9em;
   }
+  .event {
+    width: auto;
+    flex-shrink: initial;
+  }
+  .event img {
+    width: 100%;
+  }
+  /* para que el video se adapte a la anchura del contendeor usamos width:100% */
+  .event-imageContainer iframe {
+    width: 100%;
+  }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .project-details {
     width: auto;
     font-size: 12px;
+  }
+  .event-detail {
+    margin: -2em 0.5em 0.5em;
+    padding: 1.5em;
+  }
+  .event-imageContainer iframe {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .project-details {
+    width: auto;
+    font-size: 10px;
   }
 }
