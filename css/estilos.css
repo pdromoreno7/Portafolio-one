@@ -1,30 +1,3 @@
-/* reglas
-selectores
-declaraciones
-propiedades
-valores */
-
-/* seletor de etiqueta  header - section - article - nav */
-/* header {
-  background: pink;
-  color: red
-} */
-
-/* selector descendente  */
-/* body header div nav ol li a  */
-
-/* selector de clase . */
-
-/* .link */
-
-/* selector de id # */
-/* #portafolio */
-
-/* gris oscuro = #1d252c */
-/* gris claro = #626262 */
-/* background gris = #1b2127 */
-/* celeste = #026fff */
-
 body {
   font-family: "Source Sans Pro", sans-serif;
   margin: 0;
@@ -38,7 +11,6 @@ h5,
 h6 {
   font-family: "Fjalla One", sans-serif;
   font-weight: normal;
-  /* font-style: italic; */
 }
 
 h1 {
@@ -47,6 +19,7 @@ h1 {
   letter-spacing: -0.2px;
   color: white;
   margin: 0;
+  text-shadow: 1px 2px 2px rgb(109, 108, 108);
   /* margin: 100px 150px 70px 30px; */
   /* text-transform: uppercase; */
   /* text-decoration: dashed; */
@@ -76,7 +49,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .hero-image {
@@ -224,6 +197,9 @@ figure {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.footer .container div {
+  padding: 0 15px;
+}
 
 .footer img {
   vertical-align: middle;
@@ -321,6 +297,9 @@ figure {
 .social-link.instagram {
   background-image: url("../images/instagram.svg");
 }
+.form-email {
+  padding: 0 15px;
+}
 
 .form-email input {
   border-color: gray;
@@ -359,6 +338,31 @@ figure {
   height: inherit;
   flex-wrap: inherit;
 }
+@media screen and (max-width: 1024px) {
+  /* colocamos una propiedad overflow, con un valor de hidden para que hero.image no saliera del contenedor */
+  .hero {
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 2em;
+  }
+  /* objete-position es para centrar siempre la imagen, y filter es para darle un blur y hacer destacar las letras */
+  .hero-image {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    object-position: 20% 30%;
+    filter: opacity(80%) blur(1px);
+  }
+  h1 {
+    font-size: 1.6em;
+    z-index: 2;
+  }
+}
 @media screen and (max-width: 767px) {
   .header {
     display: block;
@@ -376,6 +380,20 @@ figure {
   .header .logo {
     text-align: center;
   }
+  .hero {
+    height: auto;
+    position: relative;
+  }
+  .hero-image {
+    position: absolute;
+    z-index: 1;
+    object-position: 10% 40%;
+  }
+  h1 {
+    font-size: 1.6em;
+    z-index: 2;
+  }
+
   .project {
     display: block;
   }
@@ -406,7 +424,7 @@ figure {
     font-size: 1em;
   }
   .project-description {
-    font-size: 0.9em;
+    font-size: 1.1em;
   }
   .event {
     width: auto;
@@ -421,10 +439,17 @@ figure {
   }
 }
 @media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  .hero-image {
+    object-position: initial;
+  }
   .project-details {
     width: auto;
-    font-size: 12px;
+    font-size: 14px;
   }
+  /* usamos -2em para que la caja suba y se coloque encima de la imagen  */
   .event-detail {
     margin: -2em 0.5em 0.5em;
     padding: 1.5em;
@@ -432,11 +457,40 @@ figure {
   .event-imageContainer iframe {
     width: 100%;
   }
+  .contact {
+    height: auto;
+    padding: 1em 0;
+    display: block;
+    text-align: center;
+  }
+  .form-email button {
+    margin: 1em auto;
+  }
+  /* para centrar los links de las redes: */
+  .social {
+    margin: auto;
+  }
+  /* para quitarle el margin top que se declaro arriba y hacia que el texto tuvier mas espcacio arriba que abajo: */
+  .form-email h3 {
+    margin-top: 0;
+  }
+  /* se le agrago a footer un border con un valor de trasparencia para cubrir los margener genrados por las cajas: */
+  .footer {
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .project-details {
     width: auto;
-    font-size: 10px;
+    font-size: 14px;
+  }
+  .hero {
+    padding: 2em 1em;
+  }
+  .hero-image {
+    object-position: initial;
   }
 }
