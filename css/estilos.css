@@ -319,10 +319,10 @@ figure {
 }
 
 .social-link.twitter {
-  background-image: url("/images/twitter.svg");
+  background-image: url("../images/twitter.svg");
 }
 .social-link.facebook {
-  background-image: url("/images/facebook.svg");
+  background-image: url("../images/facebook.svg");
 }
 .social-link.github {
   background-image: url("../images/github.svg");
