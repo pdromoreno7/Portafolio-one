@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=divice-width, initial-scale=1.0" />
   </head>
   <body>
-    <i class="icon-menu burger-button"></i>
+    <i class="icon-menu burger-button" id="burger-menu"></i>
     <header class="header">
       <div class="container">
         <figure class="logo">
@@ -283,5 +283,29 @@
         </div>
       </div>
     </footer>
+    <script>
+      console.log("Hola mundo");
+
+      const menu = document.querySelector(".menu");
+      console.log(menu);
+      const burgerButton = document.querySelector("#burger-menu");
+      console.log(burgerButton);
+
+      burgerButton.addEventListener("click", hideshow);
+
+      function hideshow() {
+        if (menu.classList.contains("is-active")) {
+          menu.classList.remove("is-active");
+        } else {
+          menu.classList.add("is-active");
+        }
+      }
+
+      // burgerButton.addEventListener("click", function () {
+      //   menu.classList.toggle("is-active");
+      // });
+      //Le agregamos la función en el mismo evento.
+      // Con menu.classList.toggle lo que quiere decir es: si tienes la clase, borrala, si no la tiene agregala.
+    </script>
   </body>
 </html>
