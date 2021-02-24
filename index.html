@@ -284,12 +284,58 @@
       </div>
     </footer>
     <script>
-      console.log("Hola mundo");
+      // console.log("Hola mundo");
 
+      const ipad = window.matchMedia("screen and (max-width : 767px)");
       const menu = document.querySelector(".menu");
       console.log(menu);
       const burgerButton = document.querySelector("#burger-menu");
       console.log(burgerButton);
+      //escuchemos los cambios dentro de ese media querie
+      //llamamos a otra funcion que se activa o desactiva cuando matches
+      //cambia su estado
+      ipad.addListener(validation);
+
+      if (ipad.matches) {
+        burgerButton.addEventListener("click", hideshow);
+        menu.addEventListener("click", hideMenu);
+      }
+
+      //este evento que le pasamos viene siendo el media querie
+      function validation(event) {
+        console.log(event.matches);
+
+        //este if condiciona si viene en true o false, para que el evento de click se mande o no se mande
+        if (event.matches) {
+          burgerButton.addEventListener("click", hideshow);
+
+          menu.addEventListener("click", hideMenu);
+        }
+        //cuando no sea necesario quite ela escucha del evento para ser mas optimos
+        else {
+          burgerButton.removeEventListener("click", hideshow);
+
+          menu.removeEventListener("click", hideMenu);
+        }
+      }
+
+      function hideShow() {
+        menu.classList.contains("is-active")
+          ? menu.classList.remove("is-active")
+          : menu.classList.add("is-active");
+      }
+
+      function hideMenu() {
+        menu.classList.remove("is-active");
+      }
+
+      function hideShow() {
+        if (menu.classList.contains("is-active")) {
+          menu.classList.remove("is-active");
+        } else {
+          menu.classList.add("is-active");
+        }
+      }
 
       burgerButton.addEventListener("click", hideshow);
 

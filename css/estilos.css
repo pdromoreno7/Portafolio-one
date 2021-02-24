@@ -165,6 +165,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 ol,
@@ -245,6 +246,7 @@ figure {
 .event-list {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 15px;
 }
 .event-list-title {
   margin-left: 20px;
@@ -494,9 +496,31 @@ figure {
   .project-description {
     font-size: 1.1em;
   }
+  .event-list {
+    padding: 20px;
+  }
   .event {
     width: auto;
     flex-shrink: initial;
+  }
+  .contact {
+    height: auto;
+    padding: 1em 0;
+    display: block;
+    text-align: center;
+  }
+  .form-email button {
+    margin: 1em auto;
+  }
+  /* para centrar los links de las redes: */
+  .social {
+    margin: auto;
+    width: 290px;
+    height: 50px;
+  }
+  /* para quitarle el margin top que se declaro arriba y hacia que el texto tuvier mas espcacio arriba que abajo: */
+  .form-email h3 {
+    margin-top: 0;
   }
   .event img {
     width: 100%;
@@ -537,6 +561,8 @@ figure {
   /* para centrar los links de las redes: */
   .social {
     margin: auto;
+    width: 290px;
+    height: 50px;
   }
   /* para quitarle el margin top que se declaro arriba y hacia que el texto tuvier mas espcacio arriba que abajo: */
   .form-email h3 {
