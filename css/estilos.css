@@ -563,6 +563,12 @@ figure {
     margin: auto;
     width: 290px;
     height: 50px;
+    padding-left: 65px;
+  }
+  .social-link {
+    width: 35px;
+    height: 35px;
+    background-size: 100%;
   }
   /* para quitarle el margin top que se declaro arriba y hacia que el texto tuvier mas espcacio arriba que abajo: */
   .form-email h3 {
